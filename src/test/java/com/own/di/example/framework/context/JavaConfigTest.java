@@ -8,6 +8,22 @@ import static org.junit.jupiter.api.Assertions.*;
 public class JavaConfigTest {
 
     @Test
+    public void shouldResolveImplementationFromHolderWithoutQualifier() {
+        Ifc2ImplHolder<TestApi> holder = new Ifc2ImplHolder<>();
+
+        holder.add(Ifc2Impl.builder()
+                .ifc(TestApi.class)
+                .impl(TestApiImpl.class)
+                .build());
+
+        JavaConfig config = new JavaConfig(new Reflections("com.own.di.example.framework.context"), holder);
+
+        Class<? extends TestApi> result = config.getImplClass(TestApi.class);
+
+        assertEquals(TestApiImpl.class, result);
+    }
+
+    @Test
     public void shouldResolveImplementationFromHolderWithQualifier() {
         Ifc2ImplHolder<TestApi> holder = new Ifc2ImplHolder<>();
 
