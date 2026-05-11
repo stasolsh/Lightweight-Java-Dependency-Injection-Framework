@@ -27,7 +27,7 @@ public class JavaConfig implements Config {
         if (hasQualifiers && ifc2ImplHolder.containsKey(type, qualifiers[0])) {
             objectFromHolder = ifc2ImplHolder.get(type, qualifiers[0]);
         } else if (ifc2ImplHolder.containsKey(type) && !hasQualifiers) {
-            objectFromHolder = ifc2ImplHolder.get(type, qualifiers[0]);
+            objectFromHolder = ifc2ImplHolder.get(type);
         }
 
         return Objects.nonNull(objectFromHolder) ? objectFromHolder : getaClassByReflections(type, qualifiers, hasQualifiers);
