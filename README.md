@@ -1,4 +1,10 @@
 # Lightweight Java Dependency Injection Framework
+![Build](https://github.com/stasolsh/Lightweight-Java-Dependency-Injection-Framework/actions/workflows/custom-action.yml/badge.svg)
+![Coverage](https://codecov.io/gh/stasolsh/Lightweight-Java-Dependency-Injection-Framework/branch/master/graph/badge.svg)
+![Java](https://img.shields.io/badge/Java-17-blue)
+![Maven](https://img.shields.io/badge/Maven-3.9+-blue)
+![JUnit](https://img.shields.io/badge/JUnit-5-red?logo=junit5)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 > Educational lightweight Dependency Injection (DI) and Inversion of Control (IoC) framework inspired by core Spring concepts such as dependency injection, bean lifecycle management, singleton scope, annotation-based configuration, and reflection-driven object creation.
 
@@ -125,22 +131,22 @@ Implemented in:
 
 # Main Components
 
-| Component | Description |
-|---|---|
-| [ApplicationContext.java](ApplicationContext.java) | Central IoC container managing object creation, singleton lifecycle, and dependency resolution |
-| [ObjectFactory.java](ObjectFactory.java) | Creates objects, configures dependencies, invokes lifecycle hooks, and creates dynamic proxies |
-| [InjectByType.java](InjectByType.java) | Annotation used for field-based dependency injection |
-| [Singleton.java](Singleton.java) | Marks classes as singleton-scoped beans |
-| [JavaConfig.java](JavaConfig.java) | Resolves implementation classes using reflection scanning and qualifiers |
-| [BeanDefinition.java](BeanDefinition.java) | Stores bean metadata and runtime object references |
-| [BeanDefinitionHolder.java](BeanDefinitionHolder.java) | Internal bean registry and singleton storage |
-| [Ifc2Impl.java](Ifc2Impl.java) | Interface-to-implementation mapping model |
-| [Ifc2ImplHolder.java](Ifc2ImplHolder.java) | Stores and resolves interface implementation mappings |
-| [InjectByTypeAnnotationObjectConfigurator.java](InjectByTypeAnnotationObjectConfigurator.java) | Processes dependency injection annotations and injects runtime dependencies |
-| [ObjectConfigurator.java](ObjectConfigurator.java) | Extension point for custom object configuration logic |
-| [Locale.java](Locale.java) | Support annotation for locale-based metadata injection |
-| [ValidationPatterns.java](ValidationPatterns.java) | Support annotation for validation pattern injection |
-| [Utils.java](Utils.java) | Utility helper methods used internally |
+| Component                                                                                                                                            | Description |
+|------------------------------------------------------------------------------------------------------------------------------------------------------|---|
+| [ApplicationContext.java](src/main/java/com/own/di/example/framework/context/ApplicationContext.java)                                                | Central IoC container managing object creation, singleton lifecycle, and dependency resolution |
+| [ObjectFactory.java](src/main/java/com/own/di/example/framework/factory/ObjectFactory.java)                                                          | Creates objects, configures dependencies, invokes lifecycle hooks, and creates dynamic proxies |
+| [InjectByType.java](src/main/java/com/own/di/example/framework/annotation/InjectByType.java)                                                         | Annotation used for field-based dependency injection |
+| [Singleton.java](src/main/java/com/own/di/example/framework/annotation/Singleton.java)                                                               | Marks classes as singleton-scoped beans |
+| [JavaConfig.java](src/main/java/com/own/di/example/framework/context/JavaConfig.java)                                                                | Resolves implementation classes using reflection scanning and qualifiers |
+| [BeanDefinition.java](src/main/java/com/own/di/example/framework/context/BeanDefinition.java)                                                        | Stores bean metadata and runtime object references |
+| [BeanDefinitionHolder.java](src/main/java/com/own/di/example/framework/context/BeanDefinitionHolder.java)                                            | Internal bean registry and singleton storage |
+| [Ifc2Impl.java](src/main/java/com/own/di/example/framework/context/Ifc2Impl.java)                                                                    | Interface-to-implementation mapping model |
+| [Ifc2ImplHolder.java](src/main/java/com/own/di/example/framework/context/Ifc2ImplHolder.java)                                                        | Stores and resolves interface implementation mappings |
+| [InjectByTypeAnnotationObjectConfigurator.java](src/main/java/com/own/di/example/framework/processing/InjectByTypeAnnotationObjectConfigurator.java) | Processes dependency injection annotations and injects runtime dependencies |
+| [ObjectConfigurator.java](src/main/java/com/own/di/example/framework/interfaces/ObjectConfigurator.java)                                             | Extension point for custom object configuration logic |
+| [Locale.java](src/main/java/com/own/di/example/framework/annotation/support/Locale.java)                                                             | Support annotation for locale-based metadata injection |
+| [ValidationPatterns.java](src/main/java/com/own/di/example/framework/annotation/support/ValidationPatterns.java)                                     | Support annotation for validation pattern injection |
+| [Utils.java](src/main/java/com/own/di/example/framework/util/Utils.java)                                                                             | Utility helper methods used internally |
 
 ---
 
